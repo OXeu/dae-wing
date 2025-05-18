@@ -6,7 +6,7 @@
 package connection
 
 func Schema() (string, error) {
-    return `
+	return `
 type Connection {
     src: String!
     dst: String!
