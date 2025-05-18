@@ -1,3 +1,4 @@
 [submodule "dae-core"]
 	path = dae-core
 	url = git@github.com:OXeu/dae.git
+	branch = d/traffic-monitor
