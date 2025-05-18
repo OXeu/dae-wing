@@ -26,6 +26,7 @@ schema {
 type Query {
 	healthCheck: Int!
 	token(username: String!, password: String!): String!
+	connections(): [Connection]! @hasRole(role: ADMIN)
 	numberUsers: Int!
 	# jsonStorage get given paths from user related json storage. Empty paths is to get all. Refer to https://github.com/tidwall/gjson
 	jsonStorage(paths: [String!]): [String!]! @hasRole(role: ADMIN)

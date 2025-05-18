@@ -42,6 +42,13 @@ func init() {
 	}
 }
 
+func InConnections() *sync.Map {
+	if c != nil {
+		return &c.InConnections
+	}
+	return nil
+}
+
 func ControlPlane() (*control.ControlPlane, error) {
 	if c == nil {
 		return nil, ErrControlPlaneNotInit
