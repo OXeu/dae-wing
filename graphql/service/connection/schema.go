@@ -6,12 +6,11 @@
 package connection
 
 func Schema() (string, error) {
-	return `
+    return `
 type Connection {
     src: String!
     dst: String!
     sniffed: String!
-    dscp: Int!
     l4proto: String!
     dialer: String!
     outbound: String!
