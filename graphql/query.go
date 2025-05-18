@@ -11,6 +11,7 @@ import (
     "errors"
     "fmt"
     "github.com/daeuniverse/dae-wing/graphql/service/connection"
+    "github.com/daeuniverse/dae/control"
     "io"
     "time"
 
@@ -138,8 +139,9 @@ func (r *queryResolver) User(ctx context.Context) (*user.Resolver, error) {
     }
     return &user.Resolver{User: u}, nil
 }
-func (r *queryResolver) Connections() (*connection.Resolver, error) {
-    return &connection.Resolver{}, nil
+func (r *queryResolver) Connections() ([]control.ConnectionInfo, error) {
+    rr := connection.Resolver{}
+    return rr.Connection(), nil
 }
 
 func (r *queryResolver) General() (*general.Resolver, error) {
